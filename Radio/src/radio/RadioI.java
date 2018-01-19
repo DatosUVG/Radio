@@ -23,14 +23,16 @@ public class RadioI {
         return ;
     }
     
-    boolean prender(){
+    boolean prender(boolean estado){
         
-        return;
+        estado = true;
+        return estado;
     }
     
-    boolean apagar(){
+    boolean apagar(boolean estado){
         
-        return;
+        estado = false;
+        return estado;
     }
     
     String cambioFrecuencia(){
