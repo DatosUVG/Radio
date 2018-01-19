@@ -11,6 +11,8 @@ package radio;
  */
 public class GUI extends javax.swing.JFrame {
 
+    RadioI radio = new RadioI();
+    
     /**
      * Creates new form GUI
      */
@@ -217,6 +219,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void encenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encenderActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_encenderActionPerformed
 
     /**
