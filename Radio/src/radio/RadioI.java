@@ -13,14 +13,19 @@ public class RadioI {
 
     String frecAdelante(String freq){
         
+        double f = Double.parseDouble(freq); 
+        f = f + 2;
         
-        return ;
+        
+        return Double.toString(f);
     }
     
     String frecAtras(String freq){
         
+        double f = Double.parseDouble(freq); 
+        f = f - 2;        
         
-        return ;
+        return Double.toString(f);
     }
     
     boolean prender(boolean estado){
