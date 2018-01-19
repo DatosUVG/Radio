@@ -108,6 +108,11 @@ public class GUI extends javax.swing.JFrame {
         jButton12.setText("12");
 
         save.setText("Save Current Station");
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -297,6 +302,12 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+        // TODO add your handling code here:
+        int fr = (int) freq;
+        radio.guardarFrecAm(fr, );
+    }//GEN-LAST:event_saveActionPerformed
 
     /**
      * @param args the command line arguments
