@@ -11,13 +11,13 @@ package radio;
  */
 public class RadioI {
 
-    String frecAdelante(){
+    String frecAdelante(String freq){
         
         
         return ;
     }
     
-    String frecAtras(){
+    String frecAtras(String freq){
         
         
         return ;
@@ -35,10 +35,12 @@ public class RadioI {
         return estado;
     }
     
-    String cambioFrecuencia(){
-        
-        
-        return ;
+    String cambioFrecuencia(String tipoFreq){
+        if(tipoFreq == "fm")
+        {       
+            
+            return tipoFreq;
+        }
     }
     
     void guardarFrecAm(int frec, int pos){
@@ -51,9 +53,9 @@ public class RadioI {
         
     }
     
-    String mostrarEstacion(){
+    String mostrarEstacion(String estacion){
         
-        
+        return estacion;
     }
     
     

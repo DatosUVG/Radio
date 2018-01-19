@@ -12,7 +12,9 @@ package radio;
 public class GUI extends javax.swing.JFrame {
 
     RadioI radio = new RadioI();
-    boolean estado;
+    boolean estado = false;
+    String tipoFreq = "fm";
+    double freq = 88.1;
     
     /**
      * Creates new form GUI
@@ -56,11 +58,20 @@ public class GUI extends javax.swing.JFrame {
         showFreq.setBackground(new java.awt.Color(102, 255, 255));
         showFreq.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         showFreq.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        showFreq.setText("88.1");
 
         am.setText("AM");
+        am.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amActionPerformed(evt);
+            }
+        });
 
         fm.setText("FM");
+        fm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fmActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("1");
 
@@ -151,8 +162,18 @@ public class GUI extends javax.swing.JFrame {
         );
 
         backward.setText("Backward");
+        backward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backwardActionPerformed(evt);
+            }
+        });
 
         forward.setText("Forward");
+        forward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forwardActionPerformed(evt);
+            }
+        });
 
         encender.setText("ON/OFF");
         encender.addActionListener(new java.awt.event.ActionListener() {
@@ -220,11 +241,52 @@ public class GUI extends javax.swing.JFrame {
 
     private void encenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_encenderActionPerformed
         // TODO add your handling code here:
-        estado = radio.prender(estado);
-        if(estado == true){
-            estado = radio.apagar(estado);
+        if(estado == false){
+            estado = radio.prender(estado);
+            showFreq.setText("Welcome");
         }
+        else{
+            estado = radio.apagar(estado);
+            showFreq.setText("Good Bye");
+            showFreq.setText(" ");
+        }
+        
+        
     }//GEN-LAST:event_encenderActionPerformed
+
+    private void amActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amActionPerformed
+        // TODO add your handling code here:
+        if(tipoFreq == "fm"){
+            tipoFreq = radio.cambioFrecuencia(tipoFreq);
+        }
+        else{
+            
+        }
+    }//GEN-LAST:event_amActionPerformed
+
+    private void fmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fmActionPerformed
+        // TODO add your handling code here:
+        if(tipoFreq == "am"){
+            tipoFreq = radio.cambioFrecuencia(tipoFreq);
+        }
+        else{
+            
+        }
+    }//GEN-LAST:event_fmActionPerformed
+
+    private void backwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backwardActionPerformed
+        // TODO add your handling code here:
+        String f = Double.toString(freq);
+        f = radio.frecAtras(f);
+        freq = Double.parseDouble(f);
+    }//GEN-LAST:event_backwardActionPerformed
+
+    private void forwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwardActionPerformed
+        // TODO add your handling code here:
+        String f = Double.toString(freq);
+        f = radio.frecAdelante(f);
+        freq = Double.parseDouble(f);
+    }//GEN-LAST:event_forwardActionPerformed
 
     /**
      * @param args the command line arguments
