@@ -43,9 +43,18 @@ public class RadioI {
     String cambioFrecuencia(String tipoFreq){
         if(tipoFreq == "fm")
         {       
-            
-            return tipoFreq;
+            tipoFreq = "am";
+            //AQUI FALTA LA CONVERSION DE FM A AM
         }
+        
+        if(tipoFreq == "am"){
+            tipoFreq = "fm";
+            
+            //AQUI FALTA LA CONVERSION DE FM A AM
+            
+        }
+        
+        return tipoFreq;
     }
     
     void guardarFrecAm(int frec, int pos){
