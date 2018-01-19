@@ -14,7 +14,7 @@ public class GUI extends javax.swing.JFrame {
     RadioI radio = new RadioI();
     boolean estado = false;
     String tipoFreq = "fm";
-    double freq = 88.1;
+    double freq = 87.9;
     
     /**
      * Creates new form GUI
@@ -74,6 +74,11 @@ public class GUI extends javax.swing.JFrame {
         });
 
         jButton1.setText("1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("2");
 
@@ -251,7 +256,7 @@ public class GUI extends javax.swing.JFrame {
             showFreq.setText(" ");
         }
         
-        
+        showFreq.setText(Double.toString(freq));
     }//GEN-LAST:event_encenderActionPerformed
 
     private void amActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amActionPerformed
@@ -287,6 +292,11 @@ public class GUI extends javax.swing.JFrame {
         f = radio.frecAdelante(f);
         freq = Double.parseDouble(f);
     }//GEN-LAST:event_forwardActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
