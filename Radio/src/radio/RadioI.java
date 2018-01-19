@@ -11,7 +11,49 @@ package radio;
  */
 public class RadioI {
 
+    String frecAdelante(){
+        
+        
+        return ;
+    }
     
-    //awadwdawd
+    String frecAtras(){
+        
+        
+        return ;
+    }
+    
+    boolean prender(){
+        
+        return;
+    }
+    
+    boolean apagar(){
+        
+        return;
+    }
+    
+    String cambioFrecuencia(){
+        
+        
+        return ;
+    }
+    
+    void guardarFrecAm(int frec, int pos){
+     
+        
+    }
+    
+    void guardarFrecFm(float frec, int pos){
+     
+        
+    }
+    
+    String mostrarEstacion(){
+        
+        
+    }
+    
+    
     
 }
